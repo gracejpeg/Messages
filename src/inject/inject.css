@@ -6,29 +6,29 @@
     float: center;
     width: 500px;
     margin: auto;
-    padding-top: 140px;
+    padding-top: 120px;
     padding-bottom: 50px;
-    padding-left: 110px;
+    padding-left: 60px;
     height: 250px;
     background-color: #0000CD;
     position: fixed;
     overflow: auto;
     z-index: 1;
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    bottom: 10%;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
     z-index: 99999999;    
 }
 
 .fontSans {
     visibility: visible;
-    width: 80%;
+    width: 90%;
     color: #fff;
     text-align: center;
     font-family: 'Helvetica', sans-serif;
-    font-size: 53px;
-    line-height: 54px;
+    font-size: 35px;
+    line-height: 42px;
     font-weight: normal;
 }
 
@@ -39,41 +39,41 @@
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     font-weight: normal;
-    font-size: 52px;
-    line-height: 56px;
+    font-size: 35px;
+    line-height: 42px;
     
 }
 .fontBlackletter {
     visibility: visible;
-    width: 80%;
+    width: 90%;
     color: #fff;
     text-align: center;
     font-family: 'UnifrakturMaguntia', cursive; 
     font-weight: normal;
-    font-size: 58px;
-    line-height: 56px;
+    font-size: 44px;
+    line-height: 42px;
 }
 
 .fontSerif {
     visibility: visible;
-    width: 80%;
+    width: 90%;
     color: #fff;
     text-align: center;
     font-family: 'Amiri', serif;
     font-weight: normal;
-    font-size: 62px;
-    line-height: 56px;
+    font-size: 47px;
+    line-height: 42px;
 }
 
 .fontDisplay {
     visibility: visible;
-    width: 80%;
+    width: 90%;
     color: #fff;
     text-align: center;
     font-family: 'Yatra One', cursive;
     font-weight: normal;
-    font-size: 56px;
-    line-height: 56px;
+    font-size: 42px;
+    line-height: 42px;
 }
 
 /*Image1 { display:block; }
