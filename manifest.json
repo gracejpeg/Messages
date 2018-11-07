@@ -28,7 +28,7 @@
     {
       "matches": ["<all_urls>"],
       "css": ["src/inject/inject.css"],
-      "js": ["js/jquery/jquery.min.js", "src/inject/inject.js"],
+      "js": ["js/fontloader.js","js/jquery/jquery.min.js", "src/inject/inject.js"],
       "run_at": "document_end"
     }
   ]
