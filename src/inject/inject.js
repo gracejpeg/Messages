@@ -7,7 +7,7 @@ chrome.extension.sendMessage({}, function(response) {
 
             window.WebFont.load({
                 google: {
-                    families: ['Roboto Mono', 'UnifrakturMaguntia', 'Amiri', 'Yatra One']
+                    families: ['Roboto Mono', 'Pirata One', 'Amiri', 'Yatra One']
                 }
             });
 
@@ -19,7 +19,7 @@ chrome.extension.sendMessage({}, function(response) {
             $('.fork-flag').first().text("LOOK AT THIS TEXT");
             console.log($('.fork-flag').first())
 
-            var popup = $('<div class="popup show"></div>');
+            var popup = $('<div class="popup show centerBox close"><span class="close">&times;</span></div>');
 
             /**var text = Math.random() > 0.5 ? "Text was greater than 0.5": "Text was lower than 0.5"
             popup.text(text)*/
@@ -48,10 +48,24 @@ chrome.extension.sendMessage({}, function(response) {
             var randomNumber = Math.floor(Math.random() * Math.floor(10));
             var randomKey = Object.keys(sentences)[randomNumber]; // "first", "second", etc.
 
-            var popup = $('<div class="popup show"></div>');
+            var popup = $('<div class="popup show centerBox close"><span class="close">&times;</span></div>');
             var text = $(sentences[randomKey]);
             popup.append(text)
             $('body').append(popup);
+            
+            /*var span = document.getElementsByClassName("close")[0];
+            span.onclick = function() {
+                popup.style.visibility = "hidden";
+            }*/
+            
+            popup.click(function() { popup.remove() })
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == popup) {
+                    popup.display = "none";
+                }   
+            }
             
             
             /*var image1 = new Image();

@@ -1,15 +1,20 @@
 /**
  * Place your custom CSS styles here.
  **/
+
+.centerBox {
+    margin: auto;
+}
+
 .popup {
     visibility: visible;
     float: center;
     width: 500px;
-    margin: auto;
-    padding-top: 120px;
-    padding-bottom: 50px;
-    padding-left: 60px;
     height: 250px;
+    margin: auto;
+    padding-top: 125px;
+    padding-bottom: 20px;
+    padding-left: 60px;
     background-color: #0000CD;
     position: fixed;
     overflow: auto;
@@ -48,9 +53,9 @@
     width: 90%;
     color: #fff;
     text-align: center;
-    font-family: 'UnifrakturMaguntia', cursive; 
+    font-family: 'Pirata One', cursive;
     font-weight: normal;
-    font-size: 44px;
+    font-size: 42px;
     line-height: 42px;
 }
 
@@ -85,6 +90,20 @@ Image1 > img { border: 3px solid white; }*/
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
 }
+
+.popup.fontSans.fontSerif.fontBlackletter.fontMono.fontDisplay {
+    visibility: hidden;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 
 /* Add animation (fade in the popup) */
