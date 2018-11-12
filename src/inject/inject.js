@@ -48,7 +48,7 @@ chrome.extension.sendMessage({}, function(response) {
             var randomNumber = Math.floor(Math.random() * Math.floor(10));
             var randomKey = Object.keys(sentences)[randomNumber]; // "first", "second", etc.
 
-            var popup = $('<div class="popup show centerBox close"><span class="close">&times;</span></div>');
+            var popup = $('<div class="popup show centerBox"><span class="close">&times;</span></div>');
             var text = $(sentences[randomKey]);
             popup.append(text)
             $('body').append(popup);
@@ -58,7 +58,7 @@ chrome.extension.sendMessage({}, function(response) {
                 popup.style.visibility = "hidden";
             }*/
             
-            popup.click(function() { popup.remove() })
+            $('.close').click(function() { popup.remove() })
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
