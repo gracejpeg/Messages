@@ -48,10 +48,18 @@ chrome.extension.sendMessage({}, function(response) {
             var randomNumber = Math.floor(Math.random() * Math.floor(10));
             var randomKey = Object.keys(sentences)[randomNumber]; // "first", "second", etc.
 
-            var popup = $('<div class="popup show centerBox"><span class="close">&times;</span></div>');
+            var _window = window
+            var popup = $('<div class="popup show centerBox"><span class="close">&times;</span></div>');
             var text = $(sentences[randomKey]);
+            var backLink = $('<button class="back-link">view next message</button>')
+            
             popup.append(text)
+            popup.append(backLink)
             $('body').append(popup);
+            
+            chrome.storage.local.set({test: ‘dog’}, function() {
+                console.log('Value is set to  dog’);
+            });
             
             /*var span = document.getElementsByClassName("close")[0];
             span.onclick = function() {
@@ -59,6 +67,12 @@ chrome.extension.sendMessage({}, function(response) {
             }*/
             
             $('.close').click(function() { popup.remove() })
+            backLink.click(goBack)
+            console.log(window.history)
+            
+            function goBack(){
+                window.history.back()
+            }
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
@@ -66,6 +80,8 @@ chrome.extension.sendMessage({}, function(response) {
                     popup.display = "none";
                 }   
             }
+            
+        
             
             
             /*var image1 = new Image();
