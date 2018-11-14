@@ -19,7 +19,7 @@ chrome.extension.sendMessage({}, function(response) {
             $('.fork-flag').first().text("LOOK AT THIS TEXT");
             console.log($('.fork-flag').first())
 
-            var popup = $('<div class="popup show centerBox close"><span class="close">&times;</span></div>');
+            var popup = $('<div class="popup show centerBox img"><span class="close img">&times;</span></div>');
 
             /**var text = Math.random() > 0.5 ? "Text was greater than 0.5": "Text was lower than 0.5"
             popup.text(text)*/
@@ -48,24 +48,55 @@ chrome.extension.sendMessage({}, function(response) {
             var randomNumber = Math.floor(Math.random() * Math.floor(10));
             var randomKey = Object.keys(sentences)[randomNumber]; // "first", "second", etc.
 
-            var _window = window
-            var popup = $('<div class="popup show centerBox"><span class="close">&times;</span></div>');
+            
+            /**this was me trying something to get the close icon (named cross.svg) to load on the popup**/
+            
+            /*var dir = "src/inject/images/";
+            var fileextension = ".svg";
+            $.ajax({
+                //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+                url: dir,
+                success: function (data) {
+                    //List all .png file names in the page
+                    $(data).find("cross").attr("href", function (i,cross) {
+                        if( val.match(/\.(svg)$/) ) { 
+                            $("body").append( "<img src='src/inject/images'"+ "dir" + 'cross' +"'>" );
+                        }
+                    });
+                }
+            });*/
+            
+            
+            
+            var _window = window
+            var popup = $('<div class="popup show centerBox img" id="x"><span class="close">&times;</span></div>');
             var text = $(sentences[randomKey]);
             var backLink = $('<button class="back-link">view next message</button>')
+            
+            
+             
+            
             
             popup.append(text)
             popup.append(backLink)
             $('body').append(popup);
             
-            chrome.storage.local.set({test: ‘dog’}, function() {
+            
+            
+            /*chrome.storage.local.set({test: ‘dog’}, function() {
                 console.log('Value is set to  dog’);
-            });
+            });*/
             
             /*var span = document.getElementsByClassName("close")[0];
             span.onclick = function() {
                 popup.style.visibility = "hidden";
             }*/
             
+            
+            
+            
+            $('.close').prepend('<img id="close button" src="cross.svg"/>')
+                
             $('.close').click(function() { popup.remove() })
             backLink.click(goBack)
             console.log(window.history)
@@ -81,13 +112,6 @@ chrome.extension.sendMessage({}, function(response) {
                 }   
             }
             
-        
-            
-            
-            /*var image1 = new Image();
-            image1.src = 
-            popup.append(image1)
-            $('body').append(popup);*/
 
         }
     }, 10);

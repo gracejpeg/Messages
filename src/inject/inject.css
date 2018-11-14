@@ -99,11 +99,10 @@ Image1 > img { border: 3px solid white; }*/
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #D8D8D8;
     text-decoration: none;
     cursor: pointer;
 }
-
 
 
 /* Add animation (fade in the popup) */
