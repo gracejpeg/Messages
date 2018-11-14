@@ -22,7 +22,10 @@
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": [
-    "activeTab"
+    "activeTab", "storage"
+  ],
+  "web_accessible_resources": [
+    "images/Cross.svg"
   ],
   "content_scripts": [
     {
