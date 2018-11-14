@@ -24,6 +24,9 @@
   "permissions": [
     "activeTab", "storage"
   ],
+  "web_accessible_resources": [
+    "images/Cross.svg"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
