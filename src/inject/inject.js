@@ -18,6 +18,7 @@ chrome.extension.sendMessage({}, function(response) {
             var historyIndex = numberIsOdd(history.length) ?
                 ((history.length - 1) / 2) :
                 (history.length / 2);
+            
 
             // If we load the current URL and it already has that tiny bit of data, that means we have
             // already been here, and we must be navigating back, so don't add any more data
@@ -28,7 +29,7 @@ chrome.extension.sendMessage({}, function(response) {
 
             // We don't want to show the popup until the user has 10 items in their history
             // but since saving that little piece of data I mentioned above adds an item to the history
-            // object, we actually want to wait until the length of the history is double what is should be,
+            // object, we actually want to wait until the length of the hxsxistory is double what is should be,
             // so we should wait until a length of 20 is achieved.
             if (history.length < 20) return;
 
@@ -65,21 +66,25 @@ chrome.extension.sendMessage({}, function(response) {
                 9: '<div class="fontBlackletter fontSans fontMono fontSerif fontDisplay"><span class="fontSerif">or </span><span class="fontSans">at least </span><span class="fontMono">show me </span><span class="fontBlackletter">where </span><span class="fontSerif">to put </span><span class="fontDisplay">it down.</span></div>',
             };
 
+            console.log(historyIndex)
+            console.log(sentences[sentencesKey])
+            
             // BUILD VARIOUS ELEMENTS
-            var popup = $('<div class="popup show centerBox" id="x"></div>');
+            var Msgpopup = $('<div class="Msgpopup show centerBox"></div>');
             var closeImage = $('<img class="closeButton" src="' + imgURL + '" />')
             var text = $(sentences[sentencesKey]);
-            var backLink = $('<button class="back-link">view next message</button>')
+            // I changed this from a button tag to a tag because using the button bootstrap tag was causing it to take on the styling of the DOM
+            var MsgbackLink = $('<a class="btn Msgback-link">view next message</a>');
             
             // ADD ELEMENTS TO POPUP
-            popup.append(closeImage);
-            popup.append(text);
-            popup.append(backLink);
-            $('body').append(popup);
+            Msgpopup.append(closeImage);
+            Msgpopup.append(text);
+            Msgpopup.append(MsgbackLink);
+            $('body').append(Msgpopup);
             
             // ATTACH EVENT HANDLERS
-            closeImage.click(function() { popup.remove() })
-            backLink.click(goBack)
+            closeImage.click(function() { Msgpopup.remove() })
+            MsgbackLink.click(goBack)
             
             // DEFINE EVENT HANDLERS
             function goBack(){

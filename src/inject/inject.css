@@ -6,7 +6,7 @@
     margin: auto;
 }
 
-.popup {
+.Msgpopup {
     visibility: visible;
     float: center;
     width: 500px;
@@ -85,23 +85,23 @@
 Image1 > img { border: 3px solid white; }*/
 
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup.show {
+.Msgpopup.show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
 }
 
-.popup.fontSans.fontSerif.fontBlackletter.fontMono.fontDisplay {
+.Msgpopup.Msgback-link.fontSans.fontSerif.fontBlackletter.fontMono.fontDisplay {
     visibility: hidden;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
 }
 
 .closeButton {
-    width: 50px;
+    width: 20px;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 35px;
+    left: 35px;
     cursor: pointer;
 }
 
@@ -112,6 +112,18 @@ Image1 > img { border: 3px solid white; }*/
     cursor: pointer;
 }
 
+.Msgback-link {
+    padding-top: 50px;
+    margin: auto;
+    visibility: visible;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;
+}
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
