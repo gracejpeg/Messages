@@ -9,21 +9,24 @@
 .Msgpopup {
     visibility: visible;
     float: center;
-    width: 500px;
-    height: 250px;
-    margin: auto;
-    padding-top: 125px;
-    padding-bottom: 20px;
-    padding-left: 60px;
+    width: 600px;
+    height: auto;
+    margin-left: 50%;
+    transform: translateX(-300px);
     background-color: #0000CD;
     position: fixed;
     overflow: auto;
     z-index: 1;
-    top: 5%;
-    left: 5%;
-    right: 5%;
-    bottom: 5%;
+    top: 200px;
     z-index: 99999999;    
+}
+
+.Msgpopup .sentence-container {
+    width: fit-content;
+    padding: 30px;
+    margin-top: 120px;
+    margin-bottom: 30px;
+    margin-right: 0;
 }
 
 .fontSans {
@@ -114,7 +117,8 @@ Image1 > img { border: 3px solid white; }*/
 
 .Msgback-link {
     padding-top: 50px;
-    margin: auto;
+    margin: 0 auto;
+    margin-bottom: 60px;
     visibility: visible;
     width: 100%;
     color: #fff;
