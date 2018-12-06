@@ -13,36 +13,21 @@ chrome.extension.sendMessage({}, function(response) {
             });
 
             // MANIPULATE STATE
-            // Don't worry too much about this, just know that Chrome is basically letting us save
-            // a little piece of data at each URL, and we can read it when we navigate back.
+            //
             var historyIndex = numberIsOdd(history.length) ?
                 ((history.length - 1) / 2) :
                 (history.length / 2) - 1;
             
 
-            // If we load the current URL and it already has that tiny bit of data, that means we have
-            // already been here, and we must be navigating back, so don't add any more data
-            // or it will break the navigation!
+            
             if (!(history.state && history.state.popupIndex)) {
                 history.pushState({ popupIndex: historyIndex }, 'historyIndex');
             }
 
-            // We don't want to show the popup until the user has 10 items in their history
-            // but since saving that little piece of data I mentioned above adds an item to the history
-            // object, we actually want to wait until the length of the hxsxistory is double what is should be,
-            // so we should wait until a length of 20 is achieved.
+            
             if (history.length < 20) return;
 
-            // ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~
-            // ////////////////////// WARNING //////////////////////////////
-            // Anything below this comment will only run once we show the popup, which means
-            // once the user has navigated enough and we are ready to have them navigate back
-            // while showing them the popup
-            // ////////////////////// WARNING //////////////////////////////
-            // ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~
-
-            // Get the little piece of data we saved, which is an index number we will use to select
-            // which sentence to show, and eventually which image, too!
+            
             var sentencesKey = history.state.popupIndex;
 
             // LOAD INJECTED IMAGES
@@ -70,7 +55,7 @@ chrome.extension.sendMessage({}, function(response) {
             var Msgpopup = $('<div class="Msgpopup show centerBox"></div>');
             var closeImage = $('<img class="closeButton" src="' + imgURL + '" />')
             var text = $(sentences[sentencesKey]);
-            // I changed this from a button tag to a tag because using the button bootstrap tag was causing it to take on the styling of the DOM
+          
             var MsgbackLink = $('<p class="Msgback-link">view next message</p>');
             
             // ADD ELEMENTS TO POPUP

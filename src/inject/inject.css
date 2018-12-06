@@ -10,14 +10,14 @@
     visibility: visible;
     float: center;
     width: 600px;
-    height: auto;
+    max-height: 500px;
+    overflow: hidden;
     margin-left: 50%;
     transform: translateX(-300px);
     background-color: #0000CD;
     position: fixed;
-    overflow: auto;
     z-index: 1;
-    top: 200px;
+    top: 50px;
     z-index: 99999999;    
 }
 
@@ -87,7 +87,6 @@
 /*Image1 { display:block; }
 Image1 > img { border: 3px solid white; }*/
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
 .Msgpopup.show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
